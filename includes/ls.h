@@ -6,7 +6,7 @@
 /*   By: szaghban <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 15:02:05 by szaghban          #+#    #+#             */
-/*   Updated: 2018/11/01 15:47:37 by szaghban         ###   ########.fr       */
+/*   Updated: 2018/11/01 15:55:08 by szaghban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,10 @@ typedef struct		s_options
 
 t_options			*ft_options_set(void);
 t_flist				*ft_list_set(void);
-int					check_arg(t_options *ls_options, t_flist *dir_list, char **argv);
-void				list_sort(t_flist *dir_list, t_options *ls_options, char *path);
+int					check_arg(
+		t_options *ls_options, t_flist *dir_list, char **argv);
+void				list_sort(
+		t_flist *dir_list, t_options *ls_options, char *path);
 void				element_exist(t_flist *dir_list, t_options *ls_options);
 void				ls_simulator(t_flist *dir_list, t_options *ls_options);
 void				clean_lst_files(t_flist *dir_list, t_options *ls_options);
