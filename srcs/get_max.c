@@ -6,7 +6,7 @@
 /*   By: szaghban <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 15:01:18 by szaghban          #+#    #+#             */
-/*   Updated: 2018/11/01 15:32:26 by szaghban         ###   ########.fr       */
+/*   Updated: 2018/11/01 16:09:21 by szaghban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void		check_file(char *file, t_bool m, t_place *max)
 			max->g_id = mem;
 	if (S_ISCHR(flst.st_mode) || S_ISBLK(flst.st_mode))
 	{
-		if ((mem = (ft_strlen(ft_itoa(MAJOR(flst.st_rdev))) +
-				ft_strlen(ft_itoa(MINOR(flst.st_rdev))) + 5)) > max->size)
+		if ((mem = (ft_strlen(ft_itoa((flst.st_rdev >> 24) & 0xff)) +
+				ft_strlen(ft_itoa(flst.st_rdev & 0xffffff)) + 5)) > max->size)
 			max->size = mem;
 	}
 	else if ((mem = ft_strlen(ft_itoa(flst.st_size))) > max->size)

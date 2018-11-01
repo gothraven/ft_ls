@@ -6,7 +6,7 @@
 /*   By: szaghban <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 15:01:35 by szaghban          #+#    #+#             */
-/*   Updated: 2018/11/01 15:33:48 by szaghban         ###   ########.fr       */
+/*   Updated: 2018/11/01 16:10:27 by szaghban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static void	long_display4(struct stat flst, t_place *max)
 
 	if (S_ISCHR(flst.st_mode) || S_ISBLK(flst.st_mode))
 	{
-		mem = ft_itoa(MAJOR(flst.st_rdev));
+		mem = ft_itoa((flst.st_rdev >> 24) & 0xff);
 		ft_print_void(max->size - ft_strlen(mem) - 4);
 		write(1, mem, ft_strlen(mem));
 		free(mem);
 		write(1, ",", 1);
-		mem = ft_itoa(MINOR(flst.st_rdev));
+		mem = ft_itoa(flst.st_rdev & 0xffffff);
 		ft_print_void(max->size - ft_strlen(mem) - 5);
 		write(1, mem, ft_strlen(mem));
 		free(mem);

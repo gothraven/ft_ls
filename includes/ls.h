@@ -6,7 +6,7 @@
 /*   By: szaghban <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 15:02:05 by szaghban          #+#    #+#             */
-/*   Updated: 2018/11/01 15:55:08 by szaghban         ###   ########.fr       */
+/*   Updated: 2018/11/01 16:10:26 by szaghban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
+
 # define TRUE 1
 # define FALSE 0
-
-# define MINOR(x) ((x) & 0xffffff)
-# define MAJOR(x) (((x) >> 24) & 0xff)
 
 typedef int			t_bool;
 
