@@ -6,7 +6,7 @@
 /*   By: szaghban <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/01 15:01:18 by szaghban          #+#    #+#             */
-/*   Updated: 2018/11/01 16:09:21 by szaghban         ###   ########.fr       */
+/*   Updated: 2018/11/01 17:50:57 by szaghban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static void	print_blocks(char *yay)
 	write(1, "total ", 6);
 	write(1, yay, ft_strlen(yay));
 	write(1, "\n", 1);
+	free(yay);
 }
 
 t_place		*get_max(t_fnode *node, char *path, t_bool l)
